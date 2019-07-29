@@ -33,6 +33,13 @@ It will also allow the user to:
 - **withdraw**
 - **print_statment**
 
+**Transaction**
+
+- record date of transaction
+- credited amount
+- debited amount
+- balance after the transaction
+
 ## Instructions
 
 Clone the repo
