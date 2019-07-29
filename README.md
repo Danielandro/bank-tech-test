@@ -37,8 +37,8 @@ It will also allow the user to:
 
 Clone the repo
 
-Switch into project directory
+`cd` into project directory
 
-### Run tests
+Run `bundle install` to install dependencies
 
-Type `rspec` in the terminal
+To run tests run `rspec`
