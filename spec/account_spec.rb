@@ -24,7 +24,7 @@ describe Account do
     end
 
     it 'amount cannot exceed balance' do
-      expect{ account.withdraw(10) }.to raise_error('Cannot withdraw. Not enough funds')
+      expect { account.withdraw(10) }.to raise_error('Cannot withdraw. Not enough funds')
     end
   end
 
