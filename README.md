@@ -32,3 +32,13 @@ It will also allow the user to:
 - **deposit**
 - **withdraw**
 - **print_statment**
+
+## Instructions
+
+Clone the repo
+
+Switch into project directory
+
+### Run tests
+
+Type `rspec` in the terminal
