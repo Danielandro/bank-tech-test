@@ -1,13 +1,18 @@
 require 'account'
 
 describe Account do
-  subject(:account) { described_class.new }
+  let(:account) { described_class.new }
 
-  it 'an account can be instantiated' do
-    expect(account).not_to be(nil)
+  describe 'When instantiated' do
+    it 'account has a balance of 0' do
+      expect(account.balance).to eq(0)
+    end
   end
 
-  it 'account has a balance of 0 when created' do
-    expect(account.balance).to eq(0)
+  describe '#deposit' do
+    it 'amount can be added to account' do
+      account.deposit(10)
+      expect(account.balance).to eq(10)
+    end
   end
 end
