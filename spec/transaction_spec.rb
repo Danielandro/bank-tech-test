@@ -21,8 +21,8 @@ describe Transaction do
     it 'saves the date of the transaction' do
       current_time = "2019-07-30 10:01:25 +0100"
       allow(Time).to receive(:new) { current_time }
-
-      new_transaction = Transaction.new(balance: 10, time: Time)
+      new_transaction = Transaction.new(balance: 10)
+      
       expect(new_transaction.time).to eq(current_time)
     end
   end
