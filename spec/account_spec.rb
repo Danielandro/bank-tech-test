@@ -21,24 +21,10 @@ describe Account do
 
     it 'transaction record is added to history' do
       transaction = double('transaction')
-      allow(transaction).to receive(:new) { transaction }
+      allow(transaction).to receive(:new).with(credit: 10, balance: 10) { transaction }
       account = Account.new(transaction)
       account.deposit(10)
       expect(account.transaction_history).to include(transaction)
-    end
-
-    xit 'transaction record is created with correct details' do
-      current_time = "2019-07-30 10:01:25 +0100"
-      allow(Time).to receive(:new) { current_time }      
-      credit = 10
-      debit = 0
-      balance = 10
-
-      transaction = double('transaction')
-      account = Account.new(transaction)
-      allow(transaction).to be_called_with(date, credit, debit, balance)
-      account.deposit(credit)
-      expect(transaction_history).to include(transaction)
     end
   end
 
@@ -51,6 +37,16 @@ describe Account do
 
     it 'amount cannot exceed balance' do
       expect { account.withdraw(10) }.to raise_error('Cannot withdraw. Not enough funds')
+    end
+
+    it 'transaction record is added to history' do
+      transaction = double('transaction')
+      allow(transaction).to receive(:new).with(credit: 20, balance: 20) { transaction }
+      allow(transaction).to receive(:new).with(debit: 20, balance: 0) { transaction }
+      account = Account.new(transaction)
+      account.deposit(20)
+      account.withdraw(20)
+      expect(account.transaction_history).to eq([transaction, transaction])
     end
   end
 

@@ -1,7 +1,7 @@
 require 'transaction'
 
 describe Transaction do
-  describe 'When instatiated' do
+  describe 'When instantiated' do
     before :each do
       @transaction = Transaction.new(balance: 10)
     end
@@ -22,7 +22,7 @@ describe Transaction do
       current_time = "2019-07-30 10:01:25 +0100"
       allow(Time).to receive(:new) { current_time }
       new_transaction = Transaction.new(balance: 10)
-      
+
       expect(new_transaction.time).to eq(current_time)
     end
   end
