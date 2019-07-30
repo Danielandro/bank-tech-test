@@ -18,12 +18,13 @@ describe Transaction do
       expect(@transaction.debit).to eq(0)
     end
     
-    it 'saves the date of the transaction' do
+    it 'saves the date of the transaction in dd/mm/yyyy format' do
       current_time = Time.now
+      formatted_time = current_time.strftime("%d/%m/%Y")
       allow(Time).to receive(:new) { current_time }
       new_transaction = Transaction.new(balance: 10)
       
-      expect(new_transaction.time).to eq(current_time)
+      expect(new_transaction.time).to eq(formatted_time)
     end
   end
 end
