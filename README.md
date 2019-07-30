@@ -2,6 +2,16 @@
 
 ## Specification
 
+**Language**: Ruby 2.6.3
+
+**Gems used**:
+
+    * rspec
+
+    * simplecov
+
+    * simplecov-console
+
 ### Requirements
 
 - You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
@@ -24,21 +34,15 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-### Approach
+### Approach / Models required
 
-Create an **Account** class which has **balance** & **transaction** attributes.
-It will also allow the user to:
-
-- **deposit**
-- **withdraw**
-- **print_statment**
-
-**Transaction**
-
-- record date of transaction
-- credited amount
-- debited amount
-- balance after the transaction
+| Account             | Transaction               | BankStatement    |
+| ------------------- | ------------------------- | ---------------- |
+| balance             | date of transaction       | format values    |
+| transaction_history | credited amount (if any)  | format statement |
+| deposit             | debited amount (if any)   |                  |
+| withdraw            | balance after transaction |                  |
+| print_statement     |                           |                  |
 
 ## Instructions
 
