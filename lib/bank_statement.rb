@@ -5,7 +5,7 @@ class BankStatement
 
   def print_statement
     statement = "date || credit || debit || balance\n"
-    @transaction_history.reverse.each do |transaction| 
+    @transaction_history.reverse.each do |transaction|
       date = transaction.time
       credit = format_value(transaction.credit)
       debit = format_value(transaction.debit)
@@ -13,21 +13,20 @@ class BankStatement
 
       statement += "#{date} || #{credit} || #{debit} || #{balance}\n"
     end
-    puts statement
+    statement
   end
 
   private
 
   def convert_to_f(num)
-    '%.2f' % num
+    format('%.2f', num)
   end
 
   def format_value(value)
-    if value.zero? 
+    if value.zero?
       nil
-    else 
+    else
       convert_to_f(value)
     end
   end
-
 end

@@ -49,5 +49,4 @@ describe Account do
       expect(account.transaction_history).to eq([transaction, transaction])
     end
   end
-
 end

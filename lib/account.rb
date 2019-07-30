@@ -9,7 +9,7 @@ class Account
   end
 
   def deposit(amount)
-    @balance += amount    
+    @balance += amount
     add_transaction_record('credit', amount)
   end
 
@@ -27,10 +27,10 @@ class Account
   end
 
   def add_transaction_record(type, amount)
-    if type == 'credit'
-      transaction_history << @transaction.new(credit: amount, balance: @balance)
-    else
-      transaction_history << @transaction.new(debit: amount, balance: @balance)
-    end
+    transaction_history << if type == 'credit'
+                             @transaction.new(credit: amount, balance: @balance)
+                           else
+                             @transaction.new(debit: amount, balance: @balance)
+                           end
   end
 end
