@@ -1,5 +1,3 @@
-require 'transaction'
-
 class Account
   attr_reader :balance
   attr_reader :transaction_history
@@ -29,7 +27,7 @@ class Account
   end
 
   def add_transaction_record(type, amount)
-    if (type == 'credit')
+    if type == 'credit'
       transaction_history << @transaction.new(credit: amount, balance: @balance)
     else
       transaction_history << @transaction.new(debit: amount, balance: @balance)
