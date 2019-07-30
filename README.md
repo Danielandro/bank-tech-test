@@ -36,13 +36,13 @@ date || credit || debit || balance
 
 ### Approach / Models required
 
-| Account             | Transaction               | BankStatement    |
-| ------------------- | ------------------------- | ---------------- |
-| balance             | date of transaction       | format values    |
-| transaction_history | credited amount (if any)  | format statement |
-| deposit             | debited amount (if any)   |                  |
-| withdraw            | balance after transaction |                  |
-| print_statement     |                           |                  |
+| Account                              | Transaction               | BankStatement    |
+| ------------------------------------ | ------------------------- | ---------------- |
+| balance                              | date of transaction       | format values    |
+| transaction_history                  | credited amount (if any)  | format statement |
+| deposit                              | debited amount (if any)   |                  |
+| withdraw                             | balance after transaction |                  |
+| print_statement(Not Yet Implemented) |                           |                  |
 
 ## Instructions
 
@@ -53,3 +53,9 @@ Clone the repo
 Run `bundle install` to install dependencies
 
 To run tests run `rspec`
+
+**To run the project**
+
+Run `irb` & require the model files. You can then create your account and interact using its methods.
+
+![Screenshot](/images/bank-tech-test-irb.png)
