@@ -20,7 +20,7 @@ describe BankStatement do
         "#{time3} || 300.00 ||  || 300.00"
 
       # puts formatted_statement
-      expect {  $stdout.puts(bank_statement.print_statement) }.to output(formatted_statement).to_stdout
+      expect { $stdout.puts(bank_statement.print_statement) }.to output(formatted_statement).to_stdout
     end
   end
 end
